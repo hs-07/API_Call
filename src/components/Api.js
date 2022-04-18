@@ -6,7 +6,8 @@ const Api = () => {
 
     const getAnime = async () => {
         const response = await fetch('https://anime-facts-rest-api.herokuapp.com/api/v1');
-        setUsers(await response.json());
+       setUsers (await response.json());
+       console.log(users);
     }
    
     useEffect(() => {
@@ -15,15 +16,20 @@ const Api = () => {
 
   return (
     <>
-   { users.map((curElem) => {
+    <div className="header">
+        <h1>API Calling </h1>
+    </div>
+    <div>
+   { users.data.map((curElem) => {
         return(
             <div>
              <h2>{curElem.anime_id}</h2>
              <h1>{curElem.anime_name}</h1>
             </div>
         )
-    }) 
+    })
 }   
+</div>
     </>
   )
 }
