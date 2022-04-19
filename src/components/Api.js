@@ -22,7 +22,7 @@ const Api = () => {
     <div>
    { users.data.map((curElem) => {
         return(
-            <div>
+            <div key={curElem.id}>
              <h2>{curElem.anime_id}</h2>
              <h1>{curElem.anime_name}</h1>
             </div>
